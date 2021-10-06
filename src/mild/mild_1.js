@@ -9,8 +9,7 @@
  * see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
  */
 export function sumToString(a, b) {
-    var sum = a + b;
-    return (a.toString() + ' + ' + b.toString() + ' = ' + sum.toString());
+    return '${a} + ${b} = ${a + b}'
 }
 
 
@@ -66,5 +65,6 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
+    const _ = require("lodash");
     return _.countBy(array);
 }
