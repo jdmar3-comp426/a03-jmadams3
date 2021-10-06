@@ -24,10 +24,10 @@ export function sumToString(a, b) {
  *
  */
 export function getIncreasingArray(startNumber, endNumber) {
-    var array = Array(endNumber - startNumber);
+    var array = [];
     var i = startNumber;
     while (i<=endNumber) {
-        array[i] = i;
+        array.push(i);
     }
     return array;
 }
@@ -40,18 +40,10 @@ export function getIncreasingArray(startNumber, endNumber) {
  * and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
  */
 export function maxAndMin(numbers) {
-    var maxVal = numbers[0];
-    var minVal = numbers[0];
-    for (var i = 1; i < numbers.length; i++) {
-        if (numbers[i] > maxValue) {
-            maxVal = numbers[i];
-        }
-        if (numbers[i] < minValue) {
-            minVal = numbers[i];
-        }
+    return {
+        max: Math.max(...numbers),
+        min: Math.min(...numbers)
     }
-    const object = {'min': minVal, 'max': maxVal}
-    return object;
 }
 
 /**
@@ -65,6 +57,14 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-    const _ = require("lodash");
-    return _.countBy(array);
+    let counter = {};
+    array.forEach(item => {
+        if (counter[item]) {
+            counter[item]++;
+        } else {
+            counter[item] = 1;
+        }
+    });
+    return counter;
+
 }
