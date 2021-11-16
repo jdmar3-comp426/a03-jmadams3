@@ -34,6 +34,7 @@ export function identifyArray(array) {
       obj.value = array[i];
       arr[i] = obj;
    }
+   return arr;
 }
 
 /**
@@ -54,6 +55,7 @@ export function identifyArray(array) {
  */
 export function removeKey(object, key) {
    delete object[key];
+   return object;
 }
 
 /**
@@ -73,10 +75,10 @@ export function removeKey(object, key) {
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
 export function removeKeyNonDestructive(object, key) {
-   let object = {};
-   Object.assign(object, object);
-   delete object[key];
-   return object;
+   let obj = {};
+   Object.assign(obj, object);
+   delete obj[key];
+   return obj;
 }
 
 /**
@@ -101,10 +103,10 @@ export function removeKeyNonDestructive(object, key) {
  * @return {*} The object with its keys removed.
  */
 export function removeKeys(object, keyList) {
-   let object = {};
-   Object.assign(object, object);
+   let obj = {};
+   Object.assign(obj, object);
    for (let i=0; i<keyList.length; i++) {
-      delete object[keyList[i]];
+      delete obj[keyList[i]];
    }
-   return object;
+   return obj;
 }
