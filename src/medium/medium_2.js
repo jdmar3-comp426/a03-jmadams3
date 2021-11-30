@@ -143,7 +143,7 @@ export const moreStats = {
         let yrs = [];
         for (let i = 0; i < mpg_data.length; i++) {
             if (!yrs.includes(mpg_data[i]['year'])) {
-                years.push(mpg_data[i]['year']);
+                yrs.push(mpg_data[i]['year']);
             }
         }
         for (let i = 0; i < yrs.length; i++) {
