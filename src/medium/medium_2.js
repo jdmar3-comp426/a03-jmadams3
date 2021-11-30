@@ -20,7 +20,7 @@ see under the methods section
  */
 export const allCarStats = {
     get avgMpg() {
-        let result = {};
+        let result = [];
         let totalCity = 0;
         let totalHighway = 0;
         for (let i = 0; i < mpg_data.length; i++) {
@@ -35,7 +35,7 @@ export const allCarStats = {
     },
 
     get allYearStats() {
-        let years = {};
+        let years = [];
         for (let i = 0; i < mpg_date.length; i++) {
             years.push(mpg.data[i]['year']);
         }
@@ -119,8 +119,8 @@ export const allCarStats = {
 
 export const moreStats = {
     get makerHybrids() {
-        let result = {};
-        let makes = {};
+        let result = [];
+        let makes = [];
         for (let i = 0; i < mpg_data.length; i++) {
             if (!makes.includes(mpg_data[i]['make']) && mpg_data[i]['hybrid']) {
                 makes.push(mpg_data[i]['make']);
@@ -139,8 +139,8 @@ export const moreStats = {
     },
 
     get avgMpgByYearAndHybrid() {
-        let result = {};
-        let yrs = {};
+        let result = [];
+        let yrs = [];
         for (let i = 0; i < mpg_data.length; i++) {
             if (!yrs.includes(mpg_data[i]['year'])) {
                 years.push(mpg_data[i]['year']);
